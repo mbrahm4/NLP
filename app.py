@@ -36,11 +36,8 @@ quote = max(quote_scored.items(), key=operator.itemgetter(1))[0]
 author = data[data['Quote']==quote]['Author'].unique()[0]
 
 # Output quote
-
-my_bar = st.progress(0)
-
 if run:
-    
+    my_bar = st.progress(0)
     for percent_complete in range(100):
         
         time.sleep(0.0005)
