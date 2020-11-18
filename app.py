@@ -33,6 +33,7 @@ for quote in data['Quote']:
     quote_scored[quote] = score
 
 quote = max(quote_scored.items(), key=operator.itemgetter(1))[0]
+author = data[data['Quote']==quote]['Author'].unique()[0]
 
 # Output quote
 
@@ -45,7 +46,6 @@ if run:
         time.sleep(0.0005)
         my_bar.progress(percent_complete + 1)
         
-    st.header("Dear Ponderer...")
     st.write(quote)
-    
+    st.subheader(" - " + author)
     st.balloons()
